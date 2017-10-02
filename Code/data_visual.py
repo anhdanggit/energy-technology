@@ -1,6 +1,6 @@
 
 
-def plot_explore(save):
+def plot_explore():
     import pandas as pd
     import matplotlib.pyplot as plt
     import os
@@ -16,8 +16,6 @@ def plot_explore(save):
         ax.annotate(txt, [Top15['Rank'][i], Top15['% Renewable'][i]], ha='center')
     plt.show()
 
-    if save == True:
-        plt.savefig(os.path.abspath('../Results/data_visual.png'))
 
 
-plot_explore(save=True)
+plot_explore()
