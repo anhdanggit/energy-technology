@@ -19,10 +19,10 @@ di = {"Republic of Korea": "South Korea",
       "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
       "China, Hong Kong Special Administrative Region": "Hong Kong"}
 
-energy = energy.replace({'Country':di})  # TRICK: Use the dict. to change values
+energy = energy.replace({'Country': di})  # TRICK: Use the dict. to change values
 
 # remove characters inside the parenthesis
-energy['Country'] = energy.apply(lambda x: re.sub(r'\([^()]*\)', '', x['Country']), axis=1)
+energy['Country'] = energy.apply(lambda x: re.sub(r' \([^()]*\)', '', x['Country']), axis=1)
 energy = energy.set_index('Country')
 
 
@@ -48,4 +48,5 @@ df_temp = pd.merge(ScimEn, energy, how='inner', left_index=True, right_index=Tru
 df = pd.merge(df_temp, GDP, how='inner', left_index=True, right_index=True)
 
 """Save the cleaned data as csv file"""
-df.to_csv('../Data/cleaned_data.csv', index=False)
+
+df.to_csv('../Data/cleaned_data.csv')
