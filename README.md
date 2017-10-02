@@ -1,6 +1,6 @@
 # energy-technology
 ### By: Anh Dang
-
+#### My 3rd Week of Learning Python, 01 Oct 2017
 This project is to apply Python to analyze information from different datasets to gain the insights about energy consumption, GDP in Top 15 countries with the most advanced energy engineering and technologies.
 
 The tasks include: 
